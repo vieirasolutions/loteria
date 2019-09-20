@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+}
+
+.container{
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panel-heading{
+    position: relative;
+}
+.btn-refresh{
+    position: absolute;
+    right: 3px;
+}
+.panel-loteria{
+    min-width: 600px;
+    border-color: #fff;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+
+}
+.table{
+    overflow: hidden;
+}
+
+.table tbody tr {
+    transition: all .2s ease-in-out;
+}
+.table tbody tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24)
+}
+
+.panel-resultado{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #fff;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+}

@@ -1,0 +1,83 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="row-fluid">
+        
+        {% if erro.ocorreuErro %}
+        <div class="alert alert-danger" role="alert">{{ erro.mensagem }}</div>
+        {% endif %}
+        <div class="panel panel-default panel-loteria">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Prova Monetizze - Loteria</h3>
+                <button onclick="document.location.href = document.location.href"
+                class="btn-refresh btn btn-default glyphicon glyphicon-refresh" type="submit"></button>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center"># Jogo</th>
+                                <th class="text-center">Jogo</th>
+                                <th class="text-center">Acertos</th>
+                                <th class="text-center">Ganhador</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in dadosListagem %}
+                            
+                            {% set corlinha = '' %}
+                            {% set icon = 'remove' %}
+                            
+                            {% if item.ganhador %}
+                                {% set corlinha = 'success' %}
+                                {% set icon = 'ok' %}
+                            {% endif %}
+                            
+                            <tr class="{{ corlinha }} teste">
+                                <td class="text-center">
+                                    {{ loop.index }}
+                                </td>
+                                <td class="text-center">
+                                    {% autoescape 'html' %}
+                                    {{ item.jogo|raw }}
+                                    {% endautoescape %}
+                                </td>
+                                <td class="text-center">
+                                    {{ item.quantidadeDezenasSorteadas }}
+                                </td>
+
+                                <td class="text-center">
+                                    <span class="glyphicon glyphicon-{{ icon }}" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            {% else %}
+                            
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default panel-loteria">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Resultado</h3>
+            </div>
+            <div class="panel-body text-center panel-resultado">
+                {{ resultado|join(',') }}
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+<div class="footer">
+    Autor: Breno Vieira Soares
+</div>
+
+<div class="jogar-novamente">
+    
+</div>
+{% endblock %}
