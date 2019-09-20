@@ -1,0 +1,2 @@
+# loteria
+Algoritmo de loteria
