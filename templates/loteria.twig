@@ -3,13 +3,13 @@
 {% block body %}
 <div class="container">
     <div class="row-fluid">
-        
+
         {% if erro.ocorreuErro %}
         <div class="alert alert-danger" role="alert">{{ erro.mensagem }}</div>
         {% endif %}
         <div class="panel panel-default panel-loteria">
             <div class="panel-heading">
-                <h3 class="panel-title text-center">Prova Monetizze - Loteria</h3>
+                <h3 class="panel-title text-center">Algoritmo de Loteria</h3>
                 <button onclick="document.location.href = document.location.href"
                 class="btn-refresh btn btn-default glyphicon glyphicon-refresh" type="submit"></button>
             </div>
@@ -26,15 +26,15 @@
                         </thead>
                         <tbody>
                             {% for item in dadosListagem %}
-                            
+
                             {% set corlinha = '' %}
                             {% set icon = 'remove' %}
-                            
+
                             {% if item.ganhador %}
                                 {% set corlinha = 'success' %}
                                 {% set icon = 'ok' %}
                             {% endif %}
-                            
+
                             <tr class="{{ corlinha }} teste">
                                 <td class="text-center">
                                     {{ loop.index }}
@@ -53,7 +53,7 @@
                                 </td>
                             </tr>
                             {% else %}
-                            
+
                             {% endfor %}
                         </tbody>
                     </table>
@@ -68,8 +68,8 @@
                 {{ resultado|join(',') }}
             </div>
         </div>
-        
-        
+
+
     </div>
 </div>
 
@@ -78,6 +78,6 @@
 </div>
 
 <div class="jogar-novamente">
-    
+
 </div>
 {% endblock %}

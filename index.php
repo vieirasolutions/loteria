@@ -3,10 +3,10 @@
 require_once 'class/BO/LoteriaBO.class.php';
 require_once 'vendor/autoload.php';
 
-$quantidadeDezenas = 10;
-$totalJogos = 3;
+$quantidadeDezenas = rand(6,10);
+$totalJogos        = rand(2,8);
 
-$error = new stdClass();
+$error              = new stdClass();
 $error->ocorreuErro = false;
 
 try

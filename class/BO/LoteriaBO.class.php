@@ -4,7 +4,7 @@
  * @author Breno Vieira Soares <brenovieirasoares1999@gmail.com>
  * @since 2019-09-20
  */
-class LoteriaBO 
+class LoteriaBO
 {
     private $quantidadeDezenas;
     private $resultado;
@@ -14,7 +14,7 @@ class LoteriaBO
     private $listaNumerosSorteio;
     private $quantidadeDezenasVitoria = 6;
     private $quantidadeNumerosParaSorteio = 60;
-    
+
     /**
      * Método construtor que define a quantidade de dezenas o total de jogos
      * ao se criar um objeto de instância da classe LoteriaBO
@@ -47,7 +47,7 @@ class LoteriaBO
     public function jogar()
     {
         for ($i=0; $i < $this->getTotalJogos(); $i++)
-        { 
+        {
             $this->setJogos($this->escolherNumerosDaSorte());
         }
     }
@@ -149,14 +149,14 @@ class LoteriaBO
             // Com o índice, define qual número foi escolhido, pegando o valor na posição do índice
             $numeroEscolhido         = $listaNumerosSorteio[$indiceEscolhido];
             // Faz uma atribuição do numero escolhido dentro do array de numeros escolhidos
-            $arrayNumerosEscolhidos[] = $numeroEscolhido; 
+            $arrayNumerosEscolhidos[] = $numeroEscolhido;
             // Retira o número (remove a respectiva posição do número) que foi escolhido da lista dos próximos numeros aptos a serem escolhidos, evitando duplicidade
             unset($listaNumerosSorteio[$indiceEscolhido]);
         }
 
         // Ordena o array de numeros de forma ascendente
         sort($arrayNumerosEscolhidos);
-        
+
         return $arrayNumerosEscolhidos;
     }
 
@@ -179,7 +179,7 @@ class LoteriaBO
 
     /**
      * Retorna o valor da variável quantidadeDezenas
-     */ 
+     */
     public function getQuantidadeDezenas()
     {
         return $this->quantidadeDezenas;
@@ -189,7 +189,7 @@ class LoteriaBO
      * Define o valor da variável quantidadeDezenas
      *
      * @return  LoteriaBO
-     */ 
+     */
     public function setQuantidadeDezenas($quantidadeDezenas): LoteriaBO
     {
         if (!in_array($quantidadeDezenas, $this->dezenasPermitidas))
@@ -204,7 +204,7 @@ class LoteriaBO
 
     /**
      * Retorna o valor da variável resultado
-     */ 
+     */
     public function getResultado()
     {
         return $this->resultado;
@@ -214,7 +214,7 @@ class LoteriaBO
      * Define o valor da variável resultado
      *
      * @return  LoteriaBO
-     */ 
+     */
     public function setResultado($resultado): LoteriaBO
     {
         $this->resultado = $resultado;
@@ -224,7 +224,7 @@ class LoteriaBO
 
     /**
      * Retorna o valor da variável totalJogos
-     */ 
+     */
     public function getTotalJogos()
     {
         return $this->totalJogos;
@@ -234,7 +234,7 @@ class LoteriaBO
      * Define o valor da variável totalJogos
      *
      * @return  LoteriaBO
-     */ 
+     */
     public function setTotalJogos($totalJogos): LoteriaBO
     {
         $this->totalJogos = $totalJogos;
@@ -244,7 +244,7 @@ class LoteriaBO
 
     /**
      * Retorna o valor da variável jogos
-     */ 
+     */
     public function getJogos()
     {
         return $this->jogos;
@@ -254,7 +254,7 @@ class LoteriaBO
      * Define o valor da variável jogos
      *
      * @return  LoteriaBO
-     */ 
+     */
     public function setJogos($jogo): LoteriaBO
     {
         $this->jogos[] = $jogo;
@@ -264,7 +264,7 @@ class LoteriaBO
 
     /**
      * Retorna o valor da variável listaNumerosSorteio
-     */ 
+     */
     public function getListaNumerosSorteio(): Array
     {
         return $this->listaNumerosSorteio;
@@ -274,7 +274,7 @@ class LoteriaBO
      * Define o valor da variável listaNumerosSorteio
      *
      * @return  LoteriaBO
-     */ 
+     */
     public function setListaNumerosSorteio($listaNumerosSorteio): LoteriaBO
     {
         $this->listaNumerosSorteio = $listaNumerosSorteio;

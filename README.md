@@ -1,8 +1,7 @@
-# Loteria - Teste Monetizze
-Após fazer o clone do projeto execute ```composer install```
+# Algoritmo de loteira
 
-Algoritmo de sorteio de loteria desenvolvido por Breno Vieira.
+## Dependencias
 
-Foi utilizada a engine Twig, para renderização de templates.
+Após clonar o projeto, execute:  ```composer install```
 
-Foi criado uma camada de objecto de negócio BO, para criar as regras de negócio da loteria.
+Para executar rode o seguinte comando dentro da raiz do projeto: ```php7.3 -S localhost:8080```
